@@ -5,9 +5,34 @@
   padding: 0;
 }
 
+/* ---------- Local custom fonts ----------
+   NOTE: Place font files in a `fonts/` folder at the project root.
+   - Helvetica Now Display W05 Reg -> fonts/HelveticaNowDisplayW05-Regular.woff2
+   - Halesworth eText Bold         -> fonts/Halesworth-eText-Bold.woff2
+   If you don't have the files, the CSS will fall back to system fonts.
+*/
+@font-face {
+  font-family: "Helvetica Now Display";
+  src: local("Helvetica Now Display W05 Reg"),
+    url("fonts/HelveticaNowDisplayW05-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Halesworth eText";
+  src: local("Halesworth eText Bold"),
+    url("fonts/Halesworth-eText-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* —— body + fonts —— */
 body {
-  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+  font-family: "Helvetica Now Display", "Montserrat", Arial, Helvetica,
+    sans-serif;
   color: #333;
   display: flex;
   justify-content: center;
@@ -24,10 +49,22 @@ body {
   padding-top: 50px;
 }
 
+/* header logo */
+.site-logo {
+  display: block;
+  margin: 0 auto 12px;
+  max-width: 280px;
+  width: 60%;
+  height: auto;
+}
+
 .site-title {
+  font-family: "Halesworth eText", "Montserrat", Arial, Helvetica, sans-serif;
   font-size: 22px;
-  font-weight: 500;
+  font-weight: 700;
   margin-bottom: 10px;
+  /* passionate red: interpreted as RGB(255,0,59) -> hex #ff003b */
+  color: #ff003b;
 }
 
 /* chat window */
@@ -72,6 +109,12 @@ body {
   padding: 12px;
   border: 1px solid #ccc;
   font-size: 18px;
+}
+
+.chat-form input,
+.chat-form button {
+  font-family: "Helvetica Now Display", "Montserrat", Arial, Helvetica,
+    sans-serif;
 }
 
 .chat-form input:focus {
